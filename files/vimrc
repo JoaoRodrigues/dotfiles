@@ -17,6 +17,12 @@ endif
 " Remap half PgUp/PgDn to ,d/,c
 nnoremap ,d <C-u>
 nnoremap ,c <C-d>
+" Remap window navigation
+" Instead of Ctrl-W + J, do Ctrl+J
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 set softtabstop=4
 set shiftwidth=4
