@@ -13,8 +13,8 @@ do
       floc=$( eval echo $floc )
   fi
 
-  echo "copying $fname ..."
-  /bin/cp -f files/${fname} $floc
+  echo "installing $fname ..."
+  /bin/ln -sf ${PWD}/files/${fname} $floc
 done < dotfile.loc
 
 echo "Success."
