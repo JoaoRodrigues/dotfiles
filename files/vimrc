@@ -1,6 +1,7 @@
 " based mostly on sensible.vim by Tim Pope
+" and on vimrc from joaomcteixeira
 " with a few additions here and there
-
+"
 if exists('g:loaded_sensible') || &compatible
   finish
 else
@@ -18,14 +19,21 @@ endif
 nnoremap ,d <C-u>
 nnoremap ,c <C-d>
 " Remap window navigation
-" Instead of Ctrl-W + J, do Ctrl+J
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" Instead of Ctrl-W + J, do ,J
+nnoremap ,j <C-W><C-J>
+nnoremap ,k <C-W><C-K>
+nnoremap ,l <C-W><C-L>
+nnoremap ,h <C-W><C-H>
 
+" allow buffer change with unsaved changed
+set hidden
+
+" Indentation & Spaces
+set expandtab
+set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set autoindent
 
 " match long/empty lines
 match ErrorMsg '\%>80v.\+'
@@ -49,6 +57,13 @@ set mat=2  " blink time when matching (in 0.1s)
 " do not wrap long lines
 set nowrap
 
+" no backup
+set nobackup
+
+" tab-completion for file-related tasks
+set path+=**
+set wildmenu
+
 if !has('nvim') && &ttimeoutlen == -1
   set ttimeout
   set ttimeoutlen=100
@@ -61,7 +76,6 @@ nnoremap <esc><esc> :silent! nohls<cr>
 
 set laststatus=2
 set ruler
-set wildmenu
 
 if !&scrolloff
   set scrolloff=1
